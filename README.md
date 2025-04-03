@@ -1,6 +1,6 @@
 #CAPESTONE PROJECT
-#Updated`
-# 🎯 Candidate Assessment Portal
+#Updated AGAIN 
+# 🎯 Candidate Assessment Portals
 
 ## 🚀 Project Overview
 The **Candidate Assessment Portal** is a web application designed to help job seekers prepare for interviews efficiently. It provides structured interview practice, skill gap analysis, an ATS-friendly resume builder, and an assessment review system, ultimately increasing hiring success rates.
