@@ -23,4 +23,23 @@ router.post('/', async (req, res) => {
     }
   });
 
+  // PUT endpoint to update user by ID
+router.put("/:id", async (req, res) => {
+    try {
+      const updatedUser = await User.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true } // returns updated document
+      );
+  
+      if (!updatedUser) {
+        return res.status(404).json({ message: "User not found" });
+      }
+  
+      res.status(200).json(updatedUser);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
+    }
+  });
+
 module.exports = router;

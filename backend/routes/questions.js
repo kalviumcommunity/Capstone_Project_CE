@@ -24,4 +24,24 @@ router.post('/', async (req, res) => {
     }
   });
 
+
+// PUT: Update a question by ID
+router.put("/:id", async (req, res) => {
+    try {
+      const updatedQuestion = await Question.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true } // return the updated document
+      );
+  
+      if (!updatedQuestion) {
+        return res.status(404).json({ message: "Question not found" });
+      }
+  
+      res.status(200).json(updatedQuestion);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+
 module.exports = router;
